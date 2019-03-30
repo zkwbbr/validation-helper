@@ -14,10 +14,8 @@ class HelperTest extends TestCase
 
     public function setUp(): void
     {
-        $cfg = new ValidationHelper\Config;
-        $cfg->setErrorsHtmlWrap('<div class="myerror">|</div>');
-
-        $this->helper = new ValidationHelper\Helper($cfg);
+        $this->helper = new ValidationHelper\Helper;
+        $this->helper->setErrorsHtmlWrap('<div class="myerror">|</div>');
 
         $this->rules = [
             'foo' => v::email()->contains('.')->setName('fooField'),

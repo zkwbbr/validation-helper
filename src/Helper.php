@@ -8,11 +8,38 @@ use Respect\Validation\Exceptions;
 
 class Helper
 {
-    private $cfg;
+    /**
+     * HTML code that will wrap error messages
+     *
+     * Note: use pipe | as separator
+     * E.g., <div class="">|</div>
+     *
+     * @var string
+     */
+    private $errorsHtmlWrap;
 
-    public function __construct(?Config $cfg)
+    public function __construct()
     {
-        $this->cfg = $cfg;
+
+    }
+
+    public function getErrorsHtmlWrap(): string
+    {
+        return $this->errorsHtmlWrap;
+    }
+
+    /**
+     * Set HTML code that will wrap error messages
+     *
+     * Note: use pipe | as separator
+     * E.g., <div class="">|</div>
+     *
+     * @var string
+     */
+    public function setErrorsHtmlWrap(string $errorsHtmlWrap)
+    {
+        $this->errorsHtmlWrap = $errorsHtmlWrap;
+        return $this;
     }
 
     /**
@@ -76,7 +103,7 @@ class Helper
     {
         $errors = $this->oneError($rules, $data);
 
-        $wrap = explode('|', $this->cfg->getErrorsHtmlWrap());
+        $wrap = explode('|', $this->getErrorsHtmlWrap());
 
         foreach ($errors as $k => $v)
             $errors[$k] = $wrap[0] . $v . $wrap[1];
