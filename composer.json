@@ -1,0 +1,24 @@
+{
+    "name": "zkwbbr/validation-helper",
+    "type": "library",
+    "description": "Helper class for Respect\\Validation",
+    "keywords": ["php", "validation"],
+    "authors": [
+        {
+            "name": "zkwbbr/validation-helper contributors",
+            "homepage": "https://github.com/zkwbbr/validation-helper/graphs/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zkwbbr\\ValidationHelper\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "respect/validation": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
