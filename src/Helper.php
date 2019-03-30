@@ -18,11 +18,6 @@ class Helper
      */
     private $errorsHtmlWrap;
 
-    public function __construct()
-    {
-
-    }
-
     public function getErrorsHtmlWrap(): string
     {
         return $this->errorsHtmlWrap;
